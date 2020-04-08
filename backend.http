@@ -1,0 +1,77 @@
+###
+GET https://users-dasw.herokuapp.com/api/tokenDASW
+x-expediente: 708067 
+
+###
+POST https://users-dasw.herokuapp.com/api/users
+Content-Type: application/json;charset=utf-8
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiaWF0IjoxNTg1OTUyMDgyfQ.RC3wHwhfFSrBgvfXkBGuobxYMa-ufT9O6cDqGbVY2b4
+
+{
+    "nombre": "Test",
+    "apellido": "test",
+    "correo": "test@test",
+    "password": "test",
+    "url": "",
+    "sexo": "H", 
+    "fecha": "26-10-1997"
+}
+
+###
+POST https://users-dasw.herokuapp.com/api/login
+Content-Type: application/json;charset=utf-8
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiaWF0IjoxNTg1OTUyMDgyfQ.RC3wHwhfFSrBgvfXkBGuobxYMa-ufT9O6cDqGbVY2b4
+
+{
+    "correo": "test@test",
+    "password": "test"
+}
+
+
+###
+GET https://users-dasw.herokuapp.com/api/users
+Content-Type: application/json;charset=utf-8
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiaWF0IjoxNTg2MTI0NTMxfQ.G0UYHsTUF5e6ytz5bv4Qb_uLoTxcqqiOTNw4PHqpMLE
+x-user-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiY29ycmVvIjoidGVzdEB0ZXN0IiwiaWlkIjoxMCwiaWF0IjoxNTg2MjkzODE4LCJleHAiOjE1ODYyOTc0MTh9.n0ISpxffgFNMNw5gfK5CuCUYMxIUBSEXl6J-HybsUq0
+
+
+###
+POST https://users-dasw.herokuapp.com/api/users
+Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiY29ycmVvIjoiYXJpc0Bob3RtYWlsLm14IiwiaWlkIjozLCJpYXQiOjE1ODU5NTI2NjMsImV4cCI6MTU4NTk1NjI2M30.pcYxpydKgmIFqj9EDExhwjn_T9wB3psF1FQ_quLkdpA
+
+{
+    "nombre": "Aris",
+    "apellido": "Cruz",
+    "correo": "aris@hotmail.mx",
+    "password": "password123",
+    "url": "UrlValido",
+    "sexo": "H", 
+    "fecha": "26-10-1997"
+}
+
+### Obtener usuario test@test
+GET https://users-dasw.herokuapp.com/api/users/test@test
+Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiaWF0IjoxNTg1OTUyMDgyfQ.RC3wHwhfFSrBgvfXkBGuobxYMa-ufT9O6cDqGbVY2b4
+x-user-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiY29ycmVvIjoidGVzdEB0ZXN0IiwiaWlkIjoxNiwiaWF0IjoxNTg2Mjk3NTUxLCJleHAiOjE1ODYzMDExNTF9.5NmDxcLutvCSB6MeRFCMnecxdB7CGH23G5DQr8OeN1Q
+
+### BORRAR AL USUARIO test2@test.com 
+DELETE https://users-dasw.herokuapp.com/api/users/aris@hotmail.mx
+Content-Type: application/json 
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiaWF0IjoxNTg1OTUyMDgyfQ.RC3wHwhfFSrBgvfXkBGuobxYMa-ufT9O6cDqGbVY2b4
+x-user-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiY29ycmVvIjoidGVzdEB0ZXN0IiwiaWlkIjoxMCwiaWF0IjoxNTg2MTkyNjUxLCJleHAiOjE1ODYxOTYyNTF9.DKmGko8nYKLmwm3Yk-zJMtzh6XRQ0vMpn4-qp411HlE
+
+### ACTUALIZAR USUARIO t@t.com 
+PUT https://users-dasw.herokuapp.com/api/users/test@test
+Content-Type: application/json;charset=utf-8 
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiaWF0IjoxNTg2MTI0NTMxfQ.G0UYHsTUF5e6ytz5bv4Qb_uLoTxcqqiOTNw4PHqpMLE 
+x-user-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA4MDY3IiwiY29ycmVvIjoidGVzdEB0ZXN0IiwiaWlkIjoxMCwiaWF0IjoxNTg2MjkzODE4LCJleHAiOjE1ODYyOTc0MTh9.n0ISpxffgFNMNw5gfK5CuCUYMxIUBSEXl6J-HybsUq0
+
+{ 
+    "nombre":"L2", 
+    "apellido":"G2", 
+    "fecha":"10-10-2012", 
+    "url": "https://randomuser.me/api/portraits/men/8.jpg",
+    "password":"test" 
+}
