@@ -154,7 +154,7 @@ btn_login.addEventListener('click', async function(e){
   if(response.status != 200)alert('Usuario no creado');
   else {
     alert('Login exitoso!');
-    window.location.href = "practica3HTTP/consulta.html"
+    window.location.href = "consulta.html"
   }
   let tokenJson = await response.json();
   localStorage.responseToken = tokenJson.token;//guardar token de usuario en localStorage

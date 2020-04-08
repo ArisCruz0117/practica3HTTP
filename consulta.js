@@ -208,7 +208,7 @@ function usersToHTML(user){
 function verDetalle(correo){
   localStorage.detalleCorreo = correo;
   console.log(correo);
-  window.location.href = "practica3HTTP/detalle.html"
+  window.location.href = "detalle.html"
 }
 function editUser(correo){
 
